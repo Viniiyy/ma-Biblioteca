@@ -20,6 +20,7 @@ class LivroSerializer(serializers.ModelSerializer):
             'id': {'help_text': 'Identificador do livro'},
             'titulo': {'help_text': 'Título do livro'},
             'descricao': {'help_text': 'Descrição do livro'},
+            'dataEntrada': {'help_text': 'Data de entrada do livro'},
             'categoria': {'help_text': 'ID da categoria do livro. Buscar o ID no GET da API de Categoria'},
             'situacao': {'help_text': 'Situação atual do livro'}
         }
@@ -49,3 +50,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
             'senha': {'help_text': 'Senha de acesso do usuário'},
             'cpf': {'help_text': 'Número do CPF do usuário'}
         }
+
+class UsuarioEmprestimosSerializer(serializers.ModelSerializer):
+    nome = serializers.CharField()
+    LivroEmp = serializers.CharField()

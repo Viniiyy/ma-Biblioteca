@@ -13,6 +13,7 @@ class Categoria(models.Model):
 class Livro(models.Model):
     titulo = models.CharField(max_length=50)
     descricao = models.TextField()
+    dataEntrada = models.DateField()
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     situacao = models.CharField(max_length=15)
 

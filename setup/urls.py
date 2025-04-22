@@ -20,6 +20,8 @@ from bookstore.api import viewsets
 from rest_framework import routers, permissions
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
+from bookstore import views
+
 
 schema_view = get_schema_view(
     openapi.Info(
