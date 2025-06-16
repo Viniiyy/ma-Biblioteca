@@ -41,6 +41,7 @@ formulario.addEventListener('submit', function(event){
 
     .then(response => response.json())
     .then(data => {
+        alert("Livro adicionado com sucesso!");
         console.log("Sucesso:", data);
         msg.textContent = "Livro adicionado com sucesso!";
         formulario.reset();
@@ -50,3 +51,8 @@ formulario.addEventListener('submit', function(event){
         msg.textContent = "Erro ao adicionar livro";
     });
 })
+
+function listPage(){
+    window.location.href = "ListBook.html";
+}
+

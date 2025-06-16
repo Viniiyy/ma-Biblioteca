@@ -18,6 +18,7 @@ class LivroSerializer(serializers.ModelSerializer):
         fields = '__all__'
         extra_kwargs = {
             'id': {'help_text': 'Identificador do livro'},
+            'imagem': {'help_text': 'Imagem do livro'},
             'titulo': {'help_text': 'Título do livro'},
             'descricao': {'help_text': 'Descrição do livro'},
             'dataEntrada': {'help_text': 'Data de entrada do livro'},
@@ -45,6 +46,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
         fields = '__all__'
         extra_kwargs = {
             'id': {'help_text': 'Identificador do usuário'},
+            'fotoPerfil': {'help_text': 'Foto de perfil do usuário'},
             'nome': {'help_text': 'Nome completo do usuário'},
             'email': {'help_text': 'Endereço de e-mail do usuário'},
             'senha': {'help_text': 'Senha de acesso do usuário'},

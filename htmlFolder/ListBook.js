@@ -1,4 +1,3 @@
-let lista = JSON.parse(localStorage.getItem('lista')) || []
 
 
 

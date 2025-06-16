@@ -7,23 +7,39 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="navbar">
+    <<div id="navbar">
         <nav class="navbar" style="background-color: #D9D9D9;">
             <div class="container-fluid">
-                <button class="btn" style="background-color: #284d81;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
-                    <span class="navbar-toggler-icon"></span>
-                    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-                        <div class="offcanvas-header">
-                          <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"></h5>
-                        </div>
-                        <div class="offcanvas-body">
-                          <p>gulili</p>
-                        </div>
-                    </div>
+                <!-- Botão que ativa o offcanvas -->
+                <button class="btn" style="background-color: #223146; color: white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                    <span class="navbar-toggler-icon" style="filter: brightness(0) invert(1);" ></span>
                 </button>
+
+                <!-- Offcanvas fora do botão -->
+                <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                    <div class="offcanvas-header" style="background-color: #223146;">
+                        <h5 class="offcanvas-title text-light" id="offcanvasWithBothOptionsLabel">Menu</h5>
+                        <button type="button" class="btn-close light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="d-flex flex-column align-items-center gap-2 pc-1 ">
+                            <button class="btn w-100 py-4" style="border-color: #223146;">Pagina principal</button>
+                            <button onclick="perfil()" class="btn w-100 py-4" style="border-color: #223146;">Favoritados</button>
+                            <button onclick="perfil()" class="btn w-100 py-4" style="border-color: #223146;">Emprestimos</button>
+                            <button class="btn w-100 py-4" style="border-color: #223146;"></button>
+                        </div>
+                        <div class="mt-4 text-center" style="display: inline;">
+                                <button class="btn btn-danger mb-2">Sair</button>
+                                <button class="btn btn-danger mb-2">Config</button>
+                            </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Barra de pesquisa -->
                 <form action="" class="d-flex w-75" role="search">
-                    <input type="search" class="form-control me-2" style="border-color: #284d81;" placeholder="Pesquisar" aria-label="search">
-                    <button class="btn" style="border-color: #284d81;" type="submit" id="btn">Pesquisar</button>
+                    <input type="search" class="form-control me-2" style="border-color: #223146;" placeholder="Pesquisar" aria-label="search">
+                    <button class="btn" style="border-color: #223146;" type="submit" id="btn">Pesquisar</button>
                 </form>
             </div>
         </nav>
