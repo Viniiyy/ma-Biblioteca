@@ -88,7 +88,7 @@ DATABASES = {
         'HOST': 'localhost', # ip ou dominio do servidor mysql
         'PORT': '3306', # porta padrao do my sql
         'OPTIONS': {
-            'charset': 'utf8mb4', # para supoirtar caracteres
+            'charset': 'utf8mb4', # para suportar caracteres
         }
     }
 }

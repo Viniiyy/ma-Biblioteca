@@ -23,23 +23,23 @@
                     </div>
                     <div class="offcanvas-body">
                         <div class="d-flex flex-column align-items-center gap-2 pc-1 ">
-                            <button onclick="menuPrincipal()" class="btn w-100 py-4" style="border-color: #223146;">Pagina principal</button>
-                            <button onclick="favoritos()" class="btn w-100 py-4" style="border-color: #223146;">Favoritados</button>
-                            <button onclick="emprestimos()" class="btn w-100 py-4" style="border-color: #223146;">Emprestimos</button>
-                            <button class="btn w-100 py-4" style="border-color: #223146;"></button>
+                            <button onclick="home()" class="btn w-100 py-4" style="border-color: #223146;">Pagina principal</button>
+                            <button onclick="perfil()" class="btn w-100 py-4" style="border-color: #223146;">Emprestimos</button>
+                            <button onclick="listaL()" class="btn w-100 py-4" style="border-color: #223146;">Listar livros</button>
+                            <button onclick="addL()" class="btn w-100 py-4" style="border-color: #223146;">Adicionar Livros</button>
                         </div>
                         <div class="mt-4 text-center" style="display: inline;">
-                                <button class="btn btn-danger mb-2">Sair</button>
-                                <button class="btn btn-danger mb-2">Config</button>
-                            </div>
+                            <button class="btn btn-danger mb-2">Sair</button>
+                            <button onclick="config()" class="btn btn-danger mb-2">Configurações</button>
+                        </div>
                         
                     </div>
                 </div>
 
                 <!-- Barra de pesquisa -->
-                <form action="" class="d-flex w-75" role="search">
-                    <input type="search" class="form-control me-2" style="border-color: #223146;" placeholder="Pesquisar" aria-label="search">
-                    <button class="btn" style="border-color: #223146;" type="submit" id="btn">Pesquisar</button>
+                <form onsubmit="pesquisarLivros(event)" class="d-flex w-75" role="search">
+                    <input id="barraPesquisa" type="search" class="form-control me-2" style="border-color: #223146;" placeholder="Pesquisar por título..." aria-label="search">
+                    <button type="submit" class="btn" style="border-color: #223146;" id="btn">Pesquisar</button>
                 </form>
             </div>
         </nav>

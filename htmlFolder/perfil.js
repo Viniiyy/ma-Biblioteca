@@ -1,7 +1,7 @@
-const perfil = 2
+const id = 2
 
 
-fetch(`http://127.0.0.1:8000/Usuarios/${perfil}/`)
+fetch(`http://127.0.0.1:8000/Usuarios/${id}/`)
     .then(response => response.json())
     .then(user => {
     const userInfo = document.getElementById('userInfo');
@@ -16,7 +16,7 @@ fetch(`http://127.0.0.1:8000/Usuarios/${perfil}/`)
 })
 
 
-fetch(`http://127.0.0.1:8000/Usuarios/${perfil}/emprestimos/`)
+fetch(`http://127.0.0.1:8000/Usuarios/${id}/emprestimos/`)
     .then(response => response.json())
     .then(emprestimos =>{
         const userEmprest = document.getElementById('pagebody')
@@ -59,16 +59,43 @@ fetch(`http://127.0.0.1:8000/Usuarios/${perfil}/emprestimos/`)
     })
     .catch(error => {
         console.error('Erro ao buscar da API:', error);
+    }
+);
+
+function pesquisarLivros(event) {
+    event.preventDefault(); // Impede o recarregamento da página
+
+    const termo = document.getElementById('barraPesquisa').value.toLowerCase();
+    const cards = document.querySelectorAll('#pagebody .card');
+
+    cards.forEach(card => {
+        const titulo = card.querySelector('.card-text').textContent.toLowerCase();
+
+        if (titulo.includes(termo)) {
+            card.parentElement.style.display = ''; // mostra
+        } else {
+            card.parentElement.style.display = 'none'; // esconde
+        }
     });
+}
 
+function home(){
+    console.log("home")
+  window.location.href = "homeS.html";
+}
 
-    function homep(){
-        window.location.href = 'homeS.html'
-    }
-    function favoritos(){
-        window.location.href = 'perfil.html'
-    }
-    function emprestimos(){
-        window.location.href = 'perfil.html'
-    }
+function perfil(){
+  window.location.href = "perfil.html";
+}
 
+function listaL(){
+  window.location.href = "ListBook.html";
+}
+
+function addL(){
+  window.location.href = "adicionar.html";
+}
+
+function config(){
+    window.location.href = "config.html";
+}

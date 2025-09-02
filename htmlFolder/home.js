@@ -9,7 +9,7 @@ fetch('http://127.0.0.1:8000/Categorias/')
             const cat = document.createElement('div'); // trocado de 'cat' para 'div'
             cat.className = 'cat';
             cat.innerHTML = `
-                <button class="btn" style="background-color: #223146; color: white" type="button">
+                <button onclick="filtroC(${categoria.id})" class="btn m-md-1" style="background-color: #223146; color: white" type="button">
                     ${categoria.categoria}
                 </button>
             `;
@@ -48,14 +48,51 @@ fetch('http://127.0.0.1:8000/Livros/')
     });
 
 
-function perfil(){
-    window.location.href = "perfil.html"
+
+
+function pesquisarLivros(event) {
+    event.preventDefault(); // Impede o recarregamento da página
+
+    const termo = document.getElementById('barraPesquisa').value.toLowerCase();
+    const cards = document.querySelectorAll('#pagebody .card');
+
+    cards.forEach(card => {
+        const titulo = card.querySelector('.card-text').textContent.toLowerCase();
+
+        if (titulo.includes(termo)) {
+            card.parentElement.style.display = ''; // mostra
+        } else {
+            card.parentElement.style.display = 'none'; // esconde
+        }
+    });
+}
+
+
+
+function filtroC(id){
+    window.location.href = `homeFil.html?id=${id}`
 }
 
 function paginaL(id){
     window.location.href = `emprestimo.html?id=${id}`
 }
 
+function home(){
+  window.location.href = "homeS.html";
+}
+
+function perfil(){
+  window.location.href = "perfil.html";
+}
+
+function listaL(){
+  window.location.href = "ListBook.html";
+}
+
+function addL(){
+  window.location.href = "adicionar.html";
+}
+
 function config(){
-    window.location.href = "config.html"
+    window.location.href = "config.html";
 }

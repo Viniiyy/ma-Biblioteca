@@ -170,6 +170,16 @@ class CategoriaViewSet(viewsets.ModelViewSet):
     )
     def update(self, request, *args, **kwargs):
         return super().update(request, *args, **kwargs)
+    
+    @swagger_auto_schema(
+            operation_description="Retorna os livros da categoria conforme o ID",
+            responses={200: serializers.LivroSerializer(many=True)}
+    )
+    @action(detail=True, methods=['get'], url_path='livros')
+    def livros(self,request, pk=None):
+        livro = models.Livro.objects.filter(categoria_id=pk)
+        serializer = serializers.LivroSerializer(livro, many=True, context={'request': request})
+        return Response(serializer.data)
 
     @swagger_auto_schema(
         operation_description="Deleta a categoria",

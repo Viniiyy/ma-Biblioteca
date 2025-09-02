@@ -49,16 +49,39 @@ form.addEventListener('submit', function(event) {
   });
 });
 
+function pesquisarLivros(event) {
+    event.preventDefault(); // Impede o recarregamento da página
 
-function favoritos(){
-  window.location.href = "perfil.html"
+    const termo = document.getElementById('barraPesquisa').value.toLowerCase();
+    const cards = document.querySelectorAll('#pagebody .card');
+
+    cards.forEach(card => {
+        const titulo = card.querySelector('.card-text').textContent.toLowerCase();
+
+        if (titulo.includes(termo)) {
+            card.parentElement.style.display = ''; // mostra
+        } else {
+            card.parentElement.style.display = 'none'; // esconde
+        }
+    });
 }
 
-
-function emprestimos(){
-  window.location.href = "perfil.html"
+function home(){
+  window.location.href = "homeS.html";
 }
 
-function menuPrincipal(){
-  window.location.href = "homeS.html"
+function perfil(){
+  window.location.href = "perfil.html";
+}
+
+function listaL(){
+  window.location.href = "ListBook.html";
+}
+
+function addL(){
+  window.location.href = "adicionar.html";
+}
+
+function config(){
+    window.location.href = "config.html";
 }
